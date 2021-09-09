@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_screen_navigation"
+    app:startDestination="@id/menu_feed">
+
+    <fragment
+        android:id="@+id/menu_feed"
+        android:name="com.femiras.framework.mvvm.ui.home.HomeFragment"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_homeFragment_to_logFragment"
+            app:destination="@id/logFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_logPeriodFragment"
+            app:destination="@id/logPeriodFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_home_symtoms"
+            app:destination="@id/home_symtoms" />
+        <action
+            android:id="@+id/action_homeFragment_to_moodFragment"
+            app:destination="@id/moodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moodFragment"
+        android:name="com.femiras.framework.mvvm.ui.home.today.moods.MoodsFragment"
+        android:label="Moods">
+    </fragment>
+    <fragment
+        android:id="@+id/logFragment"
+        android:name="com.femiras.framework.mvvm.ui.home.log.LogFragment"
+        android:label="Update Log">
+    </fragment>
+    <fragment
+        android:id="@+id/logPeriodFragment"
+        android:name="com.femiras.framework.mvvm.ui.home.log.LogPeriodFragment"
+        android:label="Log Period">
+    </fragment>
+    <fragment
+        android:id="@+id/menu_tv"
+        android:name="com.femiras.framework.mvvm.ui.home.resource.ResourceFragment"
+        android:label="Resources">
+        <action
+            android:id="@+id/action_menu_tv_to_menu_details"
+            app:destination="@id/menu_details" />
+
+    </fragment>
+   <dialog
+        android:id="@+id/menu_details"
+        android:name="com.femiras.framework.mvvm.ui.home.resource.ResourceDetailsFragment"
+        android:label="Resources">
+       <action
+           android:id="@+id/action_menu_details_to_menu_list_details"
+
+           app:destination="@id/menu_list_details" />
+    </dialog>
+    <dialog
+        android:id="@+id/menu_list_details"
+        android:name="com.femiras.framework.mvvm.ui.home.resource.ResourceListDetailsFragment"
+        android:label="Resources">
+    </dialog>
+    <fragment
+        android:id="@+id/menu_chat"
+        android:name="com.femiras.framework.mvvm.ui.chat.SecretChatFragment"
+        android:label="Secret Chat">
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_shop"
+        android:name="com.femiras.framework.mvvm.ui.shop.ShopFragment"
+        android:label="AnalysisFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/home_analysis"
+        android:name="com.femiras.framework.mvvm.ui.home.anaylsis.AnalysisFragment"
+        android:label="AnalysisFragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/home_today"
+        android:name="com.femiras.framework.mvvm.ui.home.today.TodayFragment"
+        android:label="TodayFragment">
+        <action
+            android:id="@+id/action_home_today_to_home_symtoms"
+            app:destination="@id/home_symtoms" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_first"
+        android:name="com.femiras.framework.mvvm.ui.home.today.FirstFragment"
+        android:label="First">
+
+    </fragment>
+    <fragment
+        android:id="@+id/home_symtoms"
+        android:name="com.femiras.framework.mvvm.ui.home.today.symptoms.SymptomsFragment"
+        android:label="Symptoms">
+
+    </fragment>
+</navigation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/menu_feed"
+        android:title="Home"
+        android:icon="@drawable/ic_icons_home" />
+    <item
+        android:id="@id/menu_tv"
+        android:title="Resources"
+        android:icon="@drawable/ic_baseline_dynamic_form_24" />
+
+    <item
+        android:id="@id/menu_chat"
+        android:title="Chat"
+        android:icon="@drawable/chats" />
+    <item
+        android:id="@id/menu_shop"
+        android:title="Shop"
+        android:icon="@drawable/ic_card_giftcard" />
+</menu>

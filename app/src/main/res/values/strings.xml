@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Beats</string>
+    <string name="provides">Provides</string>
+    <string name="get_started">Get Started</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next">NEXT</string>
+    <string name="enter_your_mobile_number">Enter Your Mobile Number</string>
+    <string name="enter_number">Enter Number</string>
+    <string name="enter_the_code_that_was_sent_to">Enter the code that was sent to</string>
+    <string name="i_didn_t_get_a_code">I didn\'t get a code</string>
+    <string name="back">Back</string>
+    <string name="text">🔒この内容は、公開されません。</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>

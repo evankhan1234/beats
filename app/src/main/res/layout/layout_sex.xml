@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/dialogTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+
+                    android:text="Sex"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="21sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.045"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+                <com.linfaxin.multirowsradiogroup.MultiRowsRadioGroup
+
+                    android:id="@+id/btns"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dialogTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    >
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/radio_had_sex"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/background_rb"
+                            android:button="@android:color/transparent"
+                            android:text="Had Sex"
+                            android:textAlignment="center"
+                            android:textColor="@drawable/txt_rb"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:textSize="12sp"
+                            android:textAlignment="center"
+                            android:text="Multiple Sessions"
+                            android:layout_marginLeft="8dp"
+                            android:id="@+id/radio_multiple_sex"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="35dp"
+                            android:background="@drawable/background_rb"
+                            android:textColor="@drawable/txt_rb"
+                            android:button="@android:color/transparent"
+                            />
+                    </LinearLayout>
+
+                </com.linfaxin.multirowsradiogroup.MultiRowsRadioGroup>
+                <com.linfaxin.multirowsradiogroup.MultiRowsRadioGroup
+
+
+                    android:id="@+id/protected_sex"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    >
+
+
+                    <LinearLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <RadioButton
+
+
+
+                            android:textSize="12sp"
+                            android:textAlignment="center"
+                            android:text="Protected Sex"
+                            android:background="@drawable/background_rb"
+                            android:textColor="@drawable/txt_rb"
+                            android:button="@android:color/transparent"
+                            android:layout_width="160dp"
+                            android:layout_height="35dp"
+                            />
+
+                        <RadioButton
+                            android:textSize="12sp"
+                            android:textAlignment="center"
+                            android:text="Unprotected Sex"
+                            android:layout_marginLeft="8dp"
+
+                            android:layout_width="160dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/background_rb"
+                            android:textColor="@drawable/txt_rb"
+                            android:button="@android:color/transparent"
+                            />
+                    </LinearLayout>
+
+                </com.linfaxin.multirowsradiogroup.MultiRowsRadioGroup>
+                <com.linfaxin.multirowsradiogroup.MultiRowsRadioGroup
+
+                    android:id="@+id/radio_group_no_sex"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/protected_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    >
+
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <RadioButton
+
+                            android:id="@+id/radio_no_sex"
+
+                            android:textSize="12sp"
+                            android:textAlignment="center"
+                            android:text="No Sex"
+                            android:background="@drawable/background_rb"
+                            android:textColor="@drawable/txt_rb"
+                            android:button="@android:color/transparent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="35dp"
+                            />
+
+
+                    </LinearLayout>
+
+                </com.linfaxin.multirowsradiogroup.MultiRowsRadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>
+

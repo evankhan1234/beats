@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/views"
+
+        android:background="@drawable/bottom_round_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/bottom_sheet_top_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView28"
+            android:src="@drawable/ic_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+
+
+            android:id="@+id/textView28"
+            app:layout_constraintBottom_toTopOf="@+id/textView29"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_sheet_top_image"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back" />
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="感情メモ"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="#316CFF"
+            app:layout_constraintBottom_toTopOf="@+id/textView29"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_sheet_top_image" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="今の素直な感情を書き出そう"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/channel_logo_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <LinearLayout
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background_curve"
+            android:orientation="vertical"
+            android:id="@+id/channel_logo_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:src="@drawable/ic_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/channel_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" >
+            <EditText
+                android:id="@+id/edit_text_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:drawablePadding="10dp"
+                android:hint="何があったか、どう思ったかを自分用にメモしよう"
+                android:inputType="textMultiLine"
+                android:textColorHint="#CECECE"
+
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="16sp" />
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/edit_text_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@null"
+                android:drawablePadding="10dp"
+                android:hint="#何があったか教えて 上司が嫌なレスをしてくる #どう思ったか教えて なんで？マウント？ 先にこっちの話を聞いてほしい。 なんなん。"
+                android:inputType="textMultiLine"
+                android:textColorHint="#CECECE"
+
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/edit_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:elevation="2dp"
+            android:padding="4dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_plus_icon"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/channel_logo_iv"
+            app:layout_constraintEnd_toEndOf="@+id/channel_logo_iv"
+            app:layout_constraintStart_toStartOf="@+id/channel_logo_iv"
+            app:layout_constraintTop_toBottomOf="@+id/channel_logo_iv" />
+        <TextView
+            android:text="@string/text"
+            android:id="@+id/channel_name_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="6dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/channel_logo_iv"
+            android:textStyle="normal"
+            tools:ignore="UseCompatTextViewDrawableXml" />
+
+
+
+
+
+        <Button
+            android:id="@+id/terms_and_conditions_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/capsule_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="次へ"
+            android:layout_marginEnd="20dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/channel_name_et" />
+
+        <TextView
+            
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="40dp"
+            tools:visibility="visible"
+            android:text=" ホーム"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cancelButton"  />
+        <TextView
+            
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="40dp"
+            tools:visibility="visible"
+            android:text="ログ"
+            android:textSize="12sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/terms_and_conditions_tv" />
+
+        <TextView
+
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="40dp"
+            tools:visibility="visible"
+            android:text=""
+            android:textSize="12sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cancelButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
