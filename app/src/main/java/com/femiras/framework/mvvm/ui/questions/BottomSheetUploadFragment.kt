@@ -88,13 +88,13 @@ class BottomSheetUploadFragment : BottomSheetDialogFragment() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 if (newState == 3) {
 
-                    view.channel_logo_iv.minimumHeight=750
-                    view.edit_text_second.visibility=View.VISIBLE
+                    view.channel_logo_iv.minimumHeight=800
+                    view.textView310.visibility=View.VISIBLE
                 }
                 else  if (newState == 4) {
 
                     view.channel_logo_iv.minimumHeight=300
-                    view.edit_text_second.visibility=View.GONE
+                    view.textView310.visibility=View.GONE
                 }
                 Log.e("height","height"+newState)
 
