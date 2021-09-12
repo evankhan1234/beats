@@ -91,6 +91,7 @@ dependencies {
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.1'
     implementation 'com.budiyev.android:circular-progress-bar:1.2.2'
     implementation 'com.jakewharton.threetenabp:threetenabp:1.1.1'
+    implementation 'com.mahc.custombottomsheetbehavior:googlemaps-like:0.9.1'
     api project(path: ':SingleRowCalendar')
     api project(path: ':hprob')
 

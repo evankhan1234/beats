@@ -13,4 +13,6 @@
     <string name="text">🔒この内容は、公開されません。</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="BottomSheetBehaviorGoogleMapsLike">com.mahc.custombottomsheetbehavior.BottomSheetBehaviorGoogleMapsLike</string>
+
 </resources>

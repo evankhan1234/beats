@@ -65,7 +65,7 @@ class QuestionsOneFragment : Fragment() {
         imgNen.getSettings().setLoadWithOverviewMode(true);
         imgNen.getSettings().setUseWideViewPort(true);
 
-        imgNen.loadUrl("https://bd50.ocdev.me/fox/")
+        imgNen.loadUrl("https://bd50.ocdev.me/beats/")
 
         img_plus.setOnClickListener{
             if (findNavController().currentDestination?.id != R.id.bottomSheetUploadFragment && findNavController().currentDestination?.id == R.id.questionsOneFragment) {
