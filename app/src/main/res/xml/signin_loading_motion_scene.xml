@@ -6,7 +6,7 @@
         motion:constraintSetEnd="@+id/firstEndAnim"
         motion:constraintSetStart="@id/start"
         motion:autoTransition="animateToEnd"
-        motion:duration="800">
+        motion:duration="100">
 
         <KeyFrameSet >
             <KeyPosition
@@ -49,8 +49,8 @@
 
         <Constraint
             android:id="@+id/splashLineImageView"
-            android:layout_width="300dp"
-            android:layout_height="232dp"
+            android:layout_width="30dp"
+            android:layout_height="22dp"
             android:layout_marginTop="162dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -59,8 +59,8 @@
 
         <Constraint
             android:id="@+id/splashPinkImageView"
-            android:layout_width="290dp"
-            android:layout_height="270dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="112dp"
             motion:layout_constraintBottom_toBottomOf="@id/splashLineImageView"
@@ -70,8 +70,8 @@
 
         <Constraint
             android:id="@+id/splashWhiteImageView"
-            android:layout_width="272dp"
-            android:layout_height="264dp"
+            android:layout_width="22dp"
+            android:layout_height="24dp"
             android:layout_marginTop="96dp"
             motion:layout_constraintBottom_toBottomOf="@id/splashLineImageView"
             motion:layout_constraintEnd_toEndOf="@id/splashLineImageView"
@@ -101,7 +101,7 @@
             android:id="@id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="20dp"
             motion:layout_constraintVertical_bias="0"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"

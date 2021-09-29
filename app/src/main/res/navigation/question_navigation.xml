@@ -14,17 +14,47 @@
         <action
             android:id="@+id/action_questionsOneFragment_to_bottomSheetUploadFragment"
             app:destination="@id/bottomSheetUploadFragment" />
+        <action
+            android:id="@+id/action_questionsOneFragment_to_rightFragment"
+            app:destination="@id/RightFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            />
+        <action
+            android:id="@+id/action_questionsOneFragment_to_leftFragment"
+            app:destination="@id/LeftFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+
     </fragment>
     <fragment
         android:id="@+id/questionsTwoFragment"
         android:name="com.femiras.framework.mvvm.ui.questions.QuestionsTwoFragment"
         android:label="QuestionsTwoFragment"
+        app:enterAnim="@anim/from_left"
+        app:exitAnim="@anim/to_right"
         tools:layout="@layout/fragment_questions_two" >
+    </fragment>
+    <fragment
+        android:id="@+id/RightFragment"
+        android:name="com.femiras.framework.mvvm.ui.questions.RightFragment"
+        android:label="RightFragment"
+        tools:layout="@layout/fragment_right" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/LeftFragment"
+        android:name="com.femiras.framework.mvvm.ui.questions.LeftFragment"
+        android:label="LeftFragment"
+        tools:layout="@layout/fragment_left" >
     </fragment>
     <dialog
         android:id="@+id/bottomSheetUploadFragment"
         android:name="com.femiras.framework.mvvm.ui.questions.BottomSheetUploadFragment"
         android:label="BottomUpload">
-
     </dialog>
 </navigation>

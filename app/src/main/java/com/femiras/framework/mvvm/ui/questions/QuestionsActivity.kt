@@ -1,8 +1,11 @@
 package com.femiras.framework.mvvm.ui.questions
 
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
@@ -15,6 +18,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.femiras.framework.mvvm.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_questions.*
 import kotlinx.android.synthetic.main.layout_appbar.view.*
 @AndroidEntryPoint
 class QuestionsActivity : AppCompatActivity() {
@@ -24,6 +28,40 @@ class QuestionsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
         setupNavController()
+        imgNen.settings.setJavaScriptEnabled(true)
+        imgNen  .clearCache(true)
+
+
+        // Set web view client
+        imgNen.webViewClient = object : WebViewClient() {
+            override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
+                // Page loading started
+                // Do something
+                Log.e("f","Sd")
+
+            }
+
+            override fun onPageFinished(view: WebView, url: String) {
+                // Page loading finished
+                // Enable disable back forward button
+//                if (findNavController().currentDestination?.id != R.id.questionsTwoFragment && findNavController().currentDestination?.id == R.id.questionsOneFragment) {
+//                    findNavController().navigate(
+//                        QuestionsOneFragmentDirections.actionQuestionsOneFragmentToSquestionsTwoFragment(
+//
+//                        )
+//                    )
+//
+//                }
+
+            }
+        }
+
+        imgNen.setInitialScale(1);
+        imgNen.getSettings().setLoadWithOverviewMode(true);
+        imgNen.getSettings().setUseWideViewPort(true);
+
+        imgNen.loadUrl("https://bd50.ocdev.me/beats/")
+
     }
     private fun setupNavController() {
         Log.e("NAV", "SetupNavController")

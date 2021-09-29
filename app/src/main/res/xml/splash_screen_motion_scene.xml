@@ -135,8 +135,8 @@
 
         <Constraint
             android:id="@+id/splashLineImageView"
-            android:layout_width="448dp"
-            android:layout_height="400dp"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintTop_toTopOf="parent"

@@ -13,9 +13,6 @@ import androidx.navigation.fragment.findNavController
 import com.femiras.framework.mvvm.R
 
 import kotlinx.android.synthetic.main.fragment_questions_one.*
-import android.graphics.Bitmap
-
-
 
 
 
@@ -33,46 +30,27 @@ class QuestionsOneFragment : Fragment() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        imgNen.settings.setJavaScriptEnabled(true)
-        imgNen  .clearCache(true)
-
-
-        // Set web view client
-        imgNen.webViewClient = object : WebViewClient() {
-            override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
-                // Page loading started
-                // Do something
-                Log.e("f","Sd")
-
-            }
-
-            override fun onPageFinished(view: WebView, url: String) {
-                // Page loading finished
-                // Enable disable back forward button
-//                if (findNavController().currentDestination?.id != R.id.questionsTwoFragment && findNavController().currentDestination?.id == R.id.questionsOneFragment) {
-//                    findNavController().navigate(
-//                        QuestionsOneFragmentDirections.actionQuestionsOneFragmentToSquestionsTwoFragment(
-//
-//                        )
-//                    )
-//
-//                }
-
-            }
-        }
-
-        imgNen.setInitialScale(1);
-        imgNen.getSettings().setLoadWithOverviewMode(true);
-        imgNen.getSettings().setUseWideViewPort(true);
-
-        imgNen.loadUrl("https://bd50.ocdev.me/beats/")
 
         img_plus.setOnClickListener{
             if (findNavController().currentDestination?.id != R.id.bottomSheetUploadFragment && findNavController().currentDestination?.id == R.id.questionsOneFragment) {
-                    findNavController().navigate(R.id.bottomSheetUploadFragment
+                findNavController().navigate(R.id.bottomSheetUploadFragment
+                )
+
+            }
+        }
+        textView4.setOnClickListener{
+            if (findNavController().currentDestination?.id != R.id.bottomSheetUploadFragment && findNavController().currentDestination?.id == R.id.questionsOneFragment) {
+                    findNavController().navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToRightFragment()
                     )
 
                 }
+        }
+        textView3.setOnClickListener{
+            if (findNavController().currentDestination?.id != R.id.bottomSheetUploadFragment && findNavController().currentDestination?.id == R.id.questionsOneFragment) {
+                findNavController().navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToLeftFragment()
+                )
+
+            }
         }
     }
 }
