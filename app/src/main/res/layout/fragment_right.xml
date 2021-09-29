@@ -1,20 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
-    android:layout_height="match_parent"
-    android:background="#E3E1E1"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".ui.questions.RightFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
-        android:layout_marginTop="50dp"
-        android:background="@drawable/bottom_round_bg"
-        android:orientation="vertical"
+    android:id="@+id/bottom_sheet"
+
+    android:fitsSystemWindows="true">
+    <RelativeLayout
+
+        android:background="#302F2F"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/views"
 
-</LinearLayout>
+            android:background="@drawable/bottom_round_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/bottom_sheet_top_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView28"
+                android:src="@drawable/ic_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageButton
+
+
+                android:id="@+id/textView28"
+                app:layout_constraintBottom_toTopOf="@+id/textView29"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottom_sheet_top_image"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="20dp"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back" />
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Commons\nと繋がろう！"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="#316CFF"
+                app:layout_constraintBottom_toTopOf="@+id/textView29"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottom_sheet_top_image" />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/textView310"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="次へ"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="#316CFF"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView29"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottom_sheet_top_image" />
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="39dp"
+                android:text="今の素直な感情を書き出そう"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/channel_logo_iv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/channel_logo_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:src="@drawable/ic_person"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView29" >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+
+
+
