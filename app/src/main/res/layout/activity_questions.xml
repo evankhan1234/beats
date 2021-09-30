@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/constraintLayout3"
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:id="@+id/constraintLayout"
             android:layout_height="match_parent">
+
             <WebView
+
                 android:id="@+id/imgNen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 />
+            <LinearLayout
 
+                android:id="@+id/textView433"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+
+
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
             <ImageButton
                 android:layout_marginStart="15dp"
                 android:id="@+id/imageView6"
@@ -71,8 +85,9 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.fragment.app.FragmentContainerView
 
+        <androidx.fragment.app.FragmentContainerView
+            android:layout_marginBottom="70dp"
             android:id="@+id/landing"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
@@ -85,4 +100,3 @@
             app:navGraph="@navigation/question_navigation" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>

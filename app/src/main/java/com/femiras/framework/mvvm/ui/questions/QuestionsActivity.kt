@@ -1,38 +1,43 @@
 package com.femiras.framework.mvvm.ui.questions
 
+import android.app.Activity
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.transition.TransitionManager
 import android.util.Log
+import android.view.GestureDetector
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.core.view.ViewCompat
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
 import com.femiras.framework.mvvm.R
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_questions.*
 import kotlinx.android.synthetic.main.activity_questions.img_plus
 import kotlinx.android.synthetic.main.activity_questions.textView3
 import kotlinx.android.synthetic.main.activity_questions.textView4
-import kotlinx.android.synthetic.main.fragment_questions_one.*
-import kotlinx.android.synthetic.main.layout_appbar.view.*
+import android.widget.Toast
+
+import android.view.MotionEvent
+import com.femiras.framework.mvvm.utils.OnSwipeTouchListener
+import java.lang.Math.abs
+
+
 @AndroidEntryPoint
 class QuestionsActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private var constraintSet1: ConstraintSet? = null
     private var constraintSet2: ConstraintSet? = null
     private var zoom = false
+    private var move = true
+    lateinit var gestureDetector: GestureDetector
+    private val swipeThreshold = 100
+    private val swipeVelocityThreshold = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +45,7 @@ class QuestionsActivity : AppCompatActivity() {
         setupNavController()
         constraintSet1 = ConstraintSet()
         constraintSet2 = ConstraintSet()
+
         imgNen.settings.setJavaScriptEnabled(true)
         imgNen  .clearCache(true)
         constraintSet2!!.clone(this, R.layout.layout_button)
@@ -68,31 +74,41 @@ class QuestionsActivity : AppCompatActivity() {
 
             }
         }
+
         textView3.setOnClickListener(View.OnClickListener {
             if (zoom) {
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet1!!.applyTo(constraintLayout)
                 zoom = false
+                textView433.setBackgroundColor(resources.getColor(R.color.transparent))
                 navController.popBackStack()
 
             } else {
                 navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToLeftFragment())
+                textView433.setBackgroundColor(resources.getColor(R.color.white))
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet2!!.applyTo(constraintLayout)
                 zoom = true
+                move=true
             }
         })
         textView4.setOnClickListener(View.OnClickListener {
             if (zoom) {
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet1!!.applyTo(constraintLayout)
+
+
                 zoom = false
+                textView433.setBackgroundColor(resources.getColor(R.color.transparent))
                 navController.popBackStack()
 
             } else {
+                move=true
                 navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToRightFragment())
+                textView433.setBackgroundColor(resources.getColor(R.color.white))
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet2!!.applyTo(constraintLayout)
+
                 zoom = true
             }
         })
@@ -105,22 +121,56 @@ class QuestionsActivity : AppCompatActivity() {
 
         imgNen.loadUrl("https://bd50.ocdev.me/beats/")
 
+
     }
+
+
 
     override fun onBackPressed() {
         super.onBackPressed()
         if (zoom) {
+
+
             TransitionManager.beginDelayedTransition(constraintLayout)
             constraintSet1!!.applyTo(constraintLayout)
-            zoom = false
 
+            zoom = false
+            textView433.setBackgroundColor(resources.getColor(R.color.transparent))
 
         }
         else{
             TransitionManager.beginDelayedTransition(constraintLayout)
             constraintSet2!!.applyTo(constraintLayout)
+            textView433.setBackgroundColor(resources.getColor(R.color.white))
             zoom = true
         }
+    }
+    fun data(activity: QuestionsActivity){
+
+
+        val navHostFragment = activity.supportFragmentManager.findFragmentById(R.id.landing) as NavHostFragment
+        navController = navHostFragment.navController
+
+
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            activity. supportFragmentManager.popBackStack(R.id.content_viewer,
+                FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
+
+
+        }
+
+        Handler().postDelayed(Runnable {  TransitionManager.beginDelayedTransition(activity.constraintLayout)
+            activity.constraintSet1!!.applyTo(activity.constraintLayout)}, 10)
+
+
+
+        activity.zoom = false
+        activity.textView433.setBackgroundColor(activity.resources.getColor(R.color.transparent))
+        navController.popBackStack()
+
+
     }
     private fun setupNavController() {
         Log.e("NAV", "SetupNavController")
@@ -143,8 +193,6 @@ class QuestionsActivity : AppCompatActivity() {
 //            return@setNavigationItemSelectedListener false
 //        }
     }
-//    override fun onBackPressed() {
-//        val navController = findNavController(R.id.questionsTwoFragment)
-//        navController.navigate(R.id.questionsOneFragment)
-//    }
+
+
 }

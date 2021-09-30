@@ -21,6 +21,7 @@
             android:id="@+id/action_homeFragment_to_moodFragment"
             app:destination="@id/moodFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/moodFragment"
         android:name="com.femiras.framework.mvvm.ui.home.today.moods.MoodsFragment"
