@@ -51,6 +51,13 @@
         android:name="com.femiras.framework.mvvm.ui.questions.LeftFragment"
         android:label="LeftFragment"
         tools:layout="@layout/fragment_left" >
+        <action
+            android:id="@+id/action_leftFragment_to_questionsOneFragment"
+            app:destination="@id/questionsOneFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
     <dialog
         android:id="@+id/bottomSheetUploadFragment"

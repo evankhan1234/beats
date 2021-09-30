@@ -31,9 +31,7 @@ class RightAdapter (val context: Context) : RecyclerView.Adapter<RightAdapter
 
     override fun onBindViewHolder(holder:CustomViewHolder, position: Int) {
 
-        Glide.with(context)
-            .load("https://media-eng.dhakatribune.com/uploads/2021/05/photographs-published-in-japan-show-takashi-miyagawa-s-meetings-with-several-different-women-1620026902279.jpg")
-            .into( holder.itemView.profile_image!!)
+
 //       when (position) {
 //            1 ->
 //                holder.itemView.icon.setImageResource(R.drawable.seconds)

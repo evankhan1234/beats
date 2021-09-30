@@ -7,7 +7,7 @@
 
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-
+    android:layout_marginBottom="70dp"
     android:id="@+id/bottom_sheet"
 
     android:fitsSystemWindows="true">
@@ -38,6 +38,7 @@
 
 
                 android:id="@+id/textView28"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toTopOf="@+id/textView29"
 
                 app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="39dp"
-                android:text="今の素直な感情を書き出そう"
+                android:text="24時間以内に投稿しているユーザー"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/channel_logo_iv"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -97,6 +98,7 @@
                 android:nestedScrollingEnabled="false"
                 android:orientation="vertical"
                 android:src="@drawable/ic_person"
+                tools:listitem="@layout/layout_right"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView29" >
