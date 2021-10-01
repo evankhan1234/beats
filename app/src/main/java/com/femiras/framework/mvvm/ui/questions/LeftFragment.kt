@@ -12,12 +12,18 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.femiras.framework.mvvm.R
 import com.femiras.framework.mvvm.utils.OnSwipeTouchListener
+import com.r0adkll.slidr.Slidr
+import com.r0adkll.slidr.model.SlidrConfig
+import com.r0adkll.slidr.model.SlidrInterface
+import com.r0adkll.slidr.model.SlidrPosition
 import kotlinx.android.synthetic.main.fragment_left.*
 
 import kotlinx.android.synthetic.main.fragment_left.imageView6
 
 
 class LeftFragment : Fragment() {
+
+
 
 
     private var mContext: Activity? = null
@@ -34,6 +40,27 @@ class LeftFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mContext=activity
+        // Get the status bar colors to interpolate between
+        val primary = mContext!!.resources.getColor(R.color.black)
+        val secondary = mContext!!.resources.getColor(R.color.black)
+
+        // Build the slidr config
+
+
+//
+//        mConfig = SlidrConfig.Builder()
+//            .primaryColor(primary)
+//            .secondaryColor(secondary)
+//            .position(SlidrPosition.LEFT)
+//            .velocityThreshold(2400f) //                .distanceThreshold(.25f)
+//            //                .edge(true)
+//
+//            .build()
+//
+//        // Attach the Slidr Mechanism to this activity
+//
+//        // Attach the Slidr Mechanism to this activity
+//        Slidr.attach(mContext!!, mConfig!!)
         imageView6.setOnClickListener {
             findNavController().popBackStack()
 

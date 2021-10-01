@@ -21,15 +21,12 @@ import kotlinx.android.synthetic.main.activity_questions.*
 import kotlinx.android.synthetic.main.activity_questions.img_plus
 import kotlinx.android.synthetic.main.activity_questions.textView3
 import kotlinx.android.synthetic.main.activity_questions.textView4
-import android.widget.Toast
 
-import android.view.MotionEvent
-import com.femiras.framework.mvvm.utils.OnSwipeTouchListener
-import java.lang.Math.abs
+import androidx.fragment.app.FragmentActivity
 
 
 @AndroidEntryPoint
-class QuestionsActivity : AppCompatActivity() {
+class QuestionsActivity : FragmentActivity() {
     private lateinit var navController: NavController
     private var constraintSet1: ConstraintSet? = null
     private var constraintSet2: ConstraintSet? = null
@@ -45,7 +42,7 @@ class QuestionsActivity : AppCompatActivity() {
         setupNavController()
         constraintSet1 = ConstraintSet()
         constraintSet2 = ConstraintSet()
-
+      //  Slidr.attach(this);
         imgNen.settings.setJavaScriptEnabled(true)
         imgNen  .clearCache(true)
         constraintSet2!!.clone(this, R.layout.layout_button)
@@ -84,7 +81,7 @@ class QuestionsActivity : AppCompatActivity() {
                 navController.popBackStack()
 
             } else {
-                navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToLeftFragment())
+                navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToMainFragment())
                 
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet2!!.applyTo(constraintLayout)
@@ -104,7 +101,7 @@ class QuestionsActivity : AppCompatActivity() {
 
             } else {
                 move=true
-                navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToRightFragment())
+                navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToRightSideFragment())
                 
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet2!!.applyTo(constraintLayout)
@@ -171,6 +168,33 @@ class QuestionsActivity : AppCompatActivity() {
 
 
     }
+    fun datas(activity: QuestionsActivity){
+
+
+        val navHostFragment = activity.supportFragmentManager.findFragmentById(R.id.landing) as NavHostFragment
+        navController = navHostFragment.navController
+
+
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            activity. supportFragmentManager.popBackStack(R.id.content_viewer,
+                FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
+
+
+        }
+
+        Handler().postDelayed(Runnable {  TransitionManager.beginDelayedTransition(activity.constraintLayout)
+            activity.constraintSet1!!.applyTo(activity.constraintLayout)}, 10)
+
+
+
+        activity.zoom = false
+        navController.popBackStack()
+
+
+    }
+
     private fun setupNavController() {
         Log.e("NAV", "SetupNavController")
 

@@ -19,9 +19,7 @@ class TestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
         setupNavController()
-        fab.setOnClickListener(View.OnClickListener {
-            navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToLeftFragment())
-        })
+
     }
     private fun setupNavController() {
         Log.e("NAV", "SetupNavController")

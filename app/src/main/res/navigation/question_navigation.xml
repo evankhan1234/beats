@@ -29,7 +29,20 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
-
+        <action
+            android:id="@+id/action_questionsOneFragment_to_mainFragment"
+            app:destination="@id/MainFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_questionsOneFragment_to_rightSideFragment"
+            app:destination="@id/RightSideFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/questionsTwoFragment"
@@ -45,7 +58,18 @@
         android:label="RightFragment"
         tools:layout="@layout/fragment_right" >
     </fragment>
-
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.femiras.framework.mvvm.ui.questions.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main" >
+    </fragment>
+    <fragment
+        android:id="@+id/RightSideFragment"
+        android:name="com.femiras.framework.mvvm.ui.questions.RightSideFragment"
+        android:label="RightSideFragment"
+        tools:layout="@layout/fragment_right_side" >
+    </fragment>
     <fragment
         android:id="@+id/LeftFragment"
         android:name="com.femiras.framework.mvvm.ui.questions.LeftFragment"

@@ -46,11 +46,11 @@ class QuestionsOneFragment : Fragment() {
                 }
         }
         textView3.setOnClickListener{
-            if (findNavController().currentDestination?.id != R.id.bottomSheetUploadFragment && findNavController().currentDestination?.id == R.id.questionsOneFragment) {
-                findNavController().navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToLeftFragment()
-                )
-
-            }
+//            if (findNavController().currentDestination?.id != R.id.bottomSheetUploadFragment && findNavController().currentDestination?.id == R.id.questionsOneFragment) {
+//               // findNavController().navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToLeftFragment()
+//                )
+//
+//            }
         }
     }
 }
