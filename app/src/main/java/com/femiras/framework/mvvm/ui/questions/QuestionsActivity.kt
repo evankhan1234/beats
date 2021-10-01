@@ -80,12 +80,12 @@ class QuestionsActivity : AppCompatActivity() {
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet1!!.applyTo(constraintLayout)
                 zoom = false
-                textView433.setBackgroundColor(resources.getColor(R.color.transparent))
+               
                 navController.popBackStack()
 
             } else {
                 navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToLeftFragment())
-                textView433.setBackgroundColor(resources.getColor(R.color.white))
+                
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet2!!.applyTo(constraintLayout)
                 zoom = true
@@ -99,13 +99,13 @@ class QuestionsActivity : AppCompatActivity() {
 
 
                 zoom = false
-                textView433.setBackgroundColor(resources.getColor(R.color.transparent))
+               
                 navController.popBackStack()
 
             } else {
                 move=true
                 navController.navigate(QuestionsOneFragmentDirections.actionQuestionsOneFragmentToRightFragment())
-                textView433.setBackgroundColor(resources.getColor(R.color.white))
+                
                 TransitionManager.beginDelayedTransition(constraintLayout)
                 constraintSet2!!.applyTo(constraintLayout)
 
@@ -135,13 +135,13 @@ class QuestionsActivity : AppCompatActivity() {
             constraintSet1!!.applyTo(constraintLayout)
 
             zoom = false
-            textView433.setBackgroundColor(resources.getColor(R.color.transparent))
+           
 
         }
         else{
             TransitionManager.beginDelayedTransition(constraintLayout)
             constraintSet2!!.applyTo(constraintLayout)
-            textView433.setBackgroundColor(resources.getColor(R.color.white))
+            
             zoom = true
         }
     }
@@ -167,7 +167,6 @@ class QuestionsActivity : AppCompatActivity() {
 
 
         activity.zoom = false
-        activity.textView433.setBackgroundColor(activity.resources.getColor(R.color.transparent))
         navController.popBackStack()
 
 

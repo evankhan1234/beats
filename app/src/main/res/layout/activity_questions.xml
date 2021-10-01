@@ -1,102 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
 
-    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/constraintLayout3"
         android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:id="@+id/constraintLayout"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:orientation="vertical">
 
-            <WebView
+            <FrameLayout
+                android:id="@+id/main_ui_frame"
 
-                android:id="@+id/imgNen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                />
-            <LinearLayout
 
-                android:id="@+id/textView433"
-                android:orientation="vertical"
+                >
+
+                <WebView
+
+                    android:id="@+id/imgNen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/landing"
+                        android:name="androidx.navigation.fragment.NavHostFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:defaultNavHost="true"
+                        app:navGraph="@navigation/question_navigation" />
+
+                </RelativeLayout>
+                <FrameLayout
+                    android:id="@+id/content_viewer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </FrameLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="match_parent" >
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-            <ImageButton
-                android:layout_marginStart="15dp"
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_search"
-                android:background="@android:color/transparent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
 
-            <ImageButton
-                android:layout_marginStart="15dp"
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <ImageButton
+                    android:layout_marginStart="15dp"
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_search"
+                    android:background="@android:color/transparent" />
 
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                <ImageButton
+                    android:layout_marginStart="15dp"
 
-                android:src="@drawable/ic_light"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                />
-            <ImageButton
-                android:id="@+id/img_plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="60dp"
-                android:src="@drawable/ic_plus_icon"
-                android:background="@android:color/transparent"
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
 
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                    android:src="@drawable/ic_light"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+                <ImageButton
+                    android:id="@+id/img_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="60dp"
+                    android:src="@drawable/ic_plus_icon"
+                    android:background="@android:color/transparent"
 
-            <ImageButton
-                android:layout_marginBottom="10dp"
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
-                android:src="@drawable/ic_person"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
+                <ImageButton
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="15dp"
+
+                    android:src="@drawable/ic_person"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
 
 
 
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.fragment.app.FragmentContainerView
-            android:layout_marginBottom="70dp"
-            android:id="@+id/landing"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/question_navigation" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
